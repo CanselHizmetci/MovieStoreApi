@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1703.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreApi", "MovieStoreApi\MovieStoreApi.csproj", "{4935C1C1-3305-4D72-B263-7BF9C5C49B19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{823053AE-C92A-485C-A60D-7B5511D1368D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4935C1C1-3305-4D72-B263-7BF9C5C49B19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4935C1C1-3305-4D72-B263-7BF9C5C49B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4935C1C1-3305-4D72-B263-7BF9C5C49B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4935C1C1-3305-4D72-B263-7BF9C5C49B19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B8D884C-4B11-4645-93F8-8AEA756D8F63}
+	EndGlobalSection
+EndGlobal
