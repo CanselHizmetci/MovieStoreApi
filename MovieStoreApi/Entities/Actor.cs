@@ -7,10 +7,9 @@ namespace MovieStoreApi.Entities
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string ActorName { get; set; }
-        public string ActorSurname { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
         public ICollection<Movie> Movies { get; set; }
-        public int MovieId { get; set; }
     }
 }
 

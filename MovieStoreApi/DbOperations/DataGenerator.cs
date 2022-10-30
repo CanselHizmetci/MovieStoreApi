@@ -17,89 +17,91 @@ namespace MovieStoreApi.DbOperations
 
                     new Actor
                     {
-                        ActorName="Brad",
-                        ActorSurname="Pitt",
-                        MovieId=1
+                        Name="Brad",
+                        Surname="Pitt",
+                        Id=1
                     },
                     new Actor
                     {
-                        ActorName = "Johnny",
-                        ActorSurname = "Depp",
-                        MovieId = 2
+                        Name = "Johnny",
+                        Surname = "Depp",
+                        Id = 2
                     },
                     new Actor
                     {
-                        ActorName = "Emma",
-                        ActorSurname = "Watson",
-                        MovieId = 3
+                        Name = "Emma",
+                        Surname = "Watson",
+                        Id = 3
                     }
                     );
                 context.Directors.AddRange(
 
                     new Director
                     {
-                        DirectorName= "David",
-                        DirectorSurname= "Fincher",
-                        MovieId=1
+                        Name= "David",
+                        Surname= "Fincher",
+                        Id=1
                     },
                     new Director
                     {
-                        DirectorName = "Wally",
-                        DirectorSurname = "Pfister",
-                        MovieId = 2
+                        Name = "Wally",
+                        Surname = "Pfister",
+                        Id = 2
                     },
                     new Director
                     {
-                        DirectorName = "Chris",
-                        DirectorSurname = "Columbus",
-                        MovieId = 3
-                    }
-                    );
-                context.Movies.AddRange(
-
-                    new Movie
-                    {
-                        MovieName="Fight Club",
-                        MovieYear= new DateTime(1999,12,10),
-                        ActorId=1,
-                        DirectorId=1,
-                        GenreId=1,
-                        Price=40
-                    },
-                    new Movie
-                    {
-                        MovieName = "Transcendence",
-                        MovieYear = new DateTime(2014,4,10),
-                        ActorId = 2,
-                        DirectorId = 2,
-                        GenreId = 2,
-                        Price = 60
-                    },
-                    new Movie
-                    {
-                        MovieName = "Harry Potter",
-                        MovieYear = new DateTime(1999, 12, 10),
-                        ActorId = 3,
-                        DirectorId = 3,
-                        GenreId = 3,
-                        Price = 80
+                        Name = "Chris",
+                        Surname = "Columbus",
+                        Id = 3
                     }
                     );
                 context.Genres.AddRange(
 
                     new Genre
                     {
-                        GenreName= "thriller"
+                        Name= "thriller"
                     },
                     new Genre
                     {
-                        GenreName = "Science fiction"
+                        Name = "Science fiction"
                     },
                     new Genre
                     {
-                        GenreName = "Fantastic"
+                        Name = "Fantastic"
                     }
                     );
+                context.SaveChanges();
+                context.Movies.AddRange(
+
+                    new Movie
+                    {
+                        Name="Fight Club",
+                        Year= 1999,
+                        Actors= context.Actors.Where(c=> new[] {1,3}.Contains(c.Id)).ToList(),
+                        DirectorId=1,
+                        GenreId=1,
+                        Price=40
+                    },
+                    new Movie
+                    {
+                        Name = "Transcendence",
+                        Year = 2014,
+                        Actors = context.Actors.Where(c => new[] { 2 }.Contains(c.Id)).ToList(),
+                        DirectorId = 2,
+                        GenreId = 2,
+                        Price = 60
+                    },
+                    new Movie
+                    {
+                        Name = "Harry Potter",
+                        Year = 1999,
+                        Actors = context.Actors.Where(c => new[] { 1, 2, 3 }.Contains(c.Id)).ToList(),
+                        DirectorId = 3,
+                        GenreId = 3,
+                        Price = 80
+                    }
+                    );
+                context.SaveChanges();
             }
         }
     }

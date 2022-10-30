@@ -7,8 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.10" />
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="FluentValidation" Version="11.2.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,10 +21,67 @@
     <None Remove="Entities\" />
     <None Remove="DbOperations\" />
     <None Remove="Microsoft.EntityFrameworkCore.InMemory" />
+    <None Remove="Application\" />
+    <None Remove="Application\MovieOperations\" />
+    <None Remove="Application\MovieOperations\CreateMovie\" />
+    <None Remove="Application\MovieOperations\DeleteMovie\" />
+    <None Remove="Application\MovieOperations\UpdateMovie\" />
+    <None Remove="Application\MovieOperations\GetMovieDetails\" />
+    <None Remove="Application\MovieOperations\GetMovies\" />
+    <None Remove="AutoMapper" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="FluentValidation" />
+    <None Remove="Common\" />
+    <None Remove="Middlewares\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Services\" />
+    <None Remove="Application\ActorOperations\" />
+    <None Remove="Application\DirectorOperations\" />
+    <None Remove="Application\GenreOperations\" />
+    <None Remove="Application\CustomerOperations\" />
+    <None Remove="Application\OrderOperations\" />
+    <None Remove="Application\GenreOperations\CreateGenre\" />
+    <None Remove="Application\GenreOperations\DeleteGenre\" />
+    <None Remove="Application\GenreOperations\GetGenreDetail\" />
+    <None Remove="Application\GenreOperations\GetGenres\" />
+    <None Remove="Application\CustomerOperations\CreateCustomer\" />
+    <None Remove="Application\CustomerOperations\DeleteCustomer\" />
+    <None Remove="Application\DirectorOperations\CreateDirector\" />
+    <None Remove="Application\DirectorOperations\DeleteDirector\" />
+    <None Remove="Application\DirectorOperations\GetDirectorDetail\" />
+    <None Remove="Application\DirectorOperations\GetDirectors\" />
+    <None Remove="Application\DirectorOperations\UpdateDirector\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Entities\" />
     <Folder Include="DbOperations\" />
+    <Folder Include="Application\" />
+    <Folder Include="Application\MovieOperations\" />
+    <Folder Include="Application\MovieOperations\CreateMovie\" />
+    <Folder Include="Application\MovieOperations\DeleteMovie\" />
+    <Folder Include="Application\MovieOperations\UpdateMovie\" />
+    <Folder Include="Application\MovieOperations\GetMovieDetail\" />
+    <Folder Include="Application\MovieOperations\GetMovies\" />
+    <Folder Include="Common\" />
+    <Folder Include="Middlewares\" />
+    <Folder Include="Services\" />
+    <Folder Include="Application\ActorOperations\" />
+    <Folder Include="Application\DirectorOperations\" />
+    <Folder Include="Application\GenreOperations\" />
+    <Folder Include="Application\CustomerOperations\" />
+    <Folder Include="Application\OrderOperations\" />
+    <Folder Include="Application\GenreOperations\CreateGenre\" />
+    <Folder Include="Application\GenreOperations\DeleteGenre\" />
+    <Folder Include="Application\GenreOperations\GetGenreDetail\" />
+    <Folder Include="Application\GenreOperations\GetGenres\" />
+    <Folder Include="Application\CustomerOperations\CreateCustomer\" />
+    <Folder Include="Application\CustomerOperations\DeleteCustomer\" />
+    <Folder Include="Application\DirectorOperations\CreateDirector\" />
+    <Folder Include="Application\DirectorOperations\DeleteDirector\" />
+    <Folder Include="Application\DirectorOperations\GetDirectorDetail\" />
+    <Folder Include="Application\DirectorOperations\GetDirectors\" />
+    <Folder Include="Application\DirectorOperations\UpdateDirector\" />
   </ItemGroup>
 </Project>
