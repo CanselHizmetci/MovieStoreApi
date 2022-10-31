@@ -52,6 +52,11 @@
     <None Remove="Application\DirectorOperations\GetDirectorDetail\" />
     <None Remove="Application\DirectorOperations\GetDirectors\" />
     <None Remove="Application\DirectorOperations\UpdateDirector\" />
+    <None Remove="Application\ActorOperations\CreateActor\" />
+    <None Remove="Application\ActorOperations\DeleteActor\" />
+    <None Remove="Application\ActorOperations\GetActorDetail\" />
+    <None Remove="Application\ActorOperations\GetActors\" />
+    <None Remove="Application\ActorOperations\UpdateActor\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -83,5 +88,10 @@
     <Folder Include="Application\DirectorOperations\GetDirectorDetail\" />
     <Folder Include="Application\DirectorOperations\GetDirectors\" />
     <Folder Include="Application\DirectorOperations\UpdateDirector\" />
+    <Folder Include="Application\ActorOperations\CreateActor\" />
+    <Folder Include="Application\ActorOperations\DeleteActor\" />
+    <Folder Include="Application\ActorOperations\GetActorDetail\" />
+    <Folder Include="Application\ActorOperations\GetActors\" />
+    <Folder Include="Application\ActorOperations\UpdateActor\" />
   </ItemGroup>
 </Project>
