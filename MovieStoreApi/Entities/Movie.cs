@@ -15,6 +15,7 @@ namespace MovieStoreApi.Entities
         public int DirectorId { get; set; }
         public ICollection<Actor> Actors { get; set; }
         public decimal Price { get; set; }
+        public int ActorId { get; set; }
     }
 }
 

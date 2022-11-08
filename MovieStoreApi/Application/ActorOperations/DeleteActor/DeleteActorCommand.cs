@@ -8,10 +8,13 @@ namespace MovieStoreApi.Application.ActorOperations.DeleteActor
     {
         public int ActorId { get; set; }
         private readonly MovieStoreDbContext _context;
+        private IMovieStoreDbContext context;
+
         public DeleteActorCommand(MovieStoreDbContext context)
         {
             _context = context;
         }
+
         public async Task Handle()
         {
             var actor = _context.Actors.FirstOrDefault(c => c.Id == ActorId);

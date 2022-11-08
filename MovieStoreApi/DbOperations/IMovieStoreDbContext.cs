@@ -4,12 +4,8 @@ using MovieStoreApi.Entities;
 
 namespace MovieStoreApi.DbOperations
 {
-    public class MovieStoreDbContext : DbContext, IMovieStoreDbContext
+    public interface IMovieStoreDbContext
     {
-        public MovieStoreDbContext(DbContextOptions<MovieStoreDbContext> options) : base(options)
-        {
-
-        }
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Director> Directors { get; set; }
@@ -17,11 +13,8 @@ namespace MovieStoreApi.DbOperations
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Order> Orders { get; set; }
 
-
-        public override int SaveChanges()
-        {
-            return base.SaveChanges();
-        }
+        int SaveChanges();
     }
+    
 }
 
