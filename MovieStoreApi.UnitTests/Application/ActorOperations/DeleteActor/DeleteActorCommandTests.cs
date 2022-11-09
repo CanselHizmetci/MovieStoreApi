@@ -15,7 +15,7 @@ namespace MovieStoreApi.UnitTests.Application.ActorOperations.DeleteActor
             _context = testFixture.Context;
         }
         [Fact]
-        public void WhenTheAuthorIsNotAvailable_InvalidOperationException_ShouldBeReturn()
+        public void WhenTheActorIsNotAvailable_InvalidOperationException_ShouldBeReturn()
         {
             //Arrange
             var actor = new Actor()

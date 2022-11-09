@@ -31,11 +31,31 @@
     <None Remove="Application\ActorOperations\GetActorDetail\" />
     <None Remove="Application\ActorOperations\GetActors\" />
     <None Remove="Application\ActorOperations\UpdateActor\" />
+    <None Remove="Application\DirectorOperations\CreateDirector\" />
+    <None Remove="Application\DirectorOperations\DeleteDirector\" />
+    <None Remove="Application\DirectorOperations\GetDirectorDetail\" />
+    <None Remove="Application\DirectorOperations\GetDirectors\" />
+    <None Remove="Application\DirectorOperations\UpdateDirector\" />
+    <None Remove="Application\MovieOperations\CreateMovie\" />
+    <None Remove="Application\MovieOperations\DeleteMovie\" />
+    <None Remove="Application\MovieOperations\GetMovieDetail\" />
+    <None Remove="Application\MovieOperations\GetMovies\" />
+    <None Remove="Application\MovieOperations\UpdateMovie\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\ActorOperations\DeleteActor\" />
     <Folder Include="Application\ActorOperations\GetActorDetail\" />
     <Folder Include="Application\ActorOperations\GetActors\" />
     <Folder Include="Application\ActorOperations\UpdateActor\" />
+    <Folder Include="Application\DirectorOperations\CreateDirector\" />
+    <Folder Include="Application\DirectorOperations\DeleteDirector\" />
+    <Folder Include="Application\DirectorOperations\GetDirectorDetail\" />
+    <Folder Include="Application\DirectorOperations\GetDirectors\" />
+    <Folder Include="Application\DirectorOperations\UpdateDirector\" />
+    <Folder Include="Application\MovieOperations\CreateMovie\" />
+    <Folder Include="Application\MovieOperations\DeleteMovie\" />
+    <Folder Include="Application\MovieOperations\GetMovieDetail\" />
+    <Folder Include="Application\MovieOperations\GetMovies\" />
+    <Folder Include="Application\MovieOperations\UpdateMovie\" />
   </ItemGroup>
 </Project>

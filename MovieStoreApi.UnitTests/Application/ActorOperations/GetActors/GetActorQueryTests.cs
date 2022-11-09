@@ -20,7 +20,7 @@ namespace MovieStoreApi.UnitTests.Application.ActorOperations.GetActors
         public void WhenQueryGetResult_Movie_ShouldNotBeReturnErrors()
         {
             GetActorQuery query = new GetActorQuery(_context, _mapper);
-            FluentActions.Invoking(() => query.Handle().GetAwaiter().GetResult());
+            FluentActions.Invoking(()=> query.Handle().GetAwaiter().GetResult());
         }
     }
 }

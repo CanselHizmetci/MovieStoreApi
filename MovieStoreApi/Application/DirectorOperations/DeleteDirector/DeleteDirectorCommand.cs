@@ -19,7 +19,7 @@ namespace MovieStoreApi.Application.DirectorOperations.DeleteDirector
         {
             var director = _context.Directors.Include(c=>c.Movies).FirstOrDefault(c => c.Id == DirectorId);
             if (director == null)
-                throw new InvalidOperationException("Silmek istediğiniz film mevcut değil");
+                throw new InvalidOperationException("Silmek istediğiniz yönetmen mevcut değil");
 
             if (director.Movies.Any())
                 throw new InvalidOperationException("Silmek istediğiniz yönetmenin filmi mevcut");
