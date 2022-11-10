@@ -17,7 +17,7 @@ namespace MovieStoreApi.Application.MovieOperations.GetMovies
 
         public async Task<List<MoviesViewModel>> Handle()
         {
-            var movieList = await _context.Movies.Include(c=> c.Actors).Include(c=> c.Genre).Include(c=>c.Director).OrderBy(c => c.Id).ToListAsync();
+            var movieList = await _context.Movies.Where(c=> !c.IsDeleted).Include(c=> c.Actors).Include(c=> c.Genre).Include(c=>c.Director).OrderBy(c => c.Id).ToListAsync();
             List<MoviesViewModel> vm = _mapper.Map<List<MoviesViewModel>>(movieList);
 
             return vm;

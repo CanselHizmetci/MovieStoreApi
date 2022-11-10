@@ -20,7 +20,7 @@ namespace MovieStoreApi.Application.MovieOperations.GetMovieDetail
 
         public async Task<MovieViewModel> Handle()
         {
-            var movie = _context.Movies.Include(c=> c.Genre).Include(c => c.Director).Include(c => c.Actors).FirstOrDefault(c => c.Id == MovieId);
+            var movie = _context.Movies.Where(c=> !c.IsDeleted).Include(c=> c.Genre).Include(c => c.Director).Include(c => c.Actors).FirstOrDefault(c => c.Id == MovieId);
             if (movie == null)
                 throw new InvalidOperationException("Film mevcut değil");
 

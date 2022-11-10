@@ -3,6 +3,7 @@ using AutoMapper;
 using MovieStoreApi.Application.ActorOperations.CreateActor;
 using MovieStoreApi.Application.ActorOperations.GetActorDetail;
 using MovieStoreApi.Application.ActorOperations.GetActors;
+using MovieStoreApi.Application.CustomerOperations.CreateCustomer;
 using MovieStoreApi.Application.DirectorOperations.CreateDirector;
 using MovieStoreApi.Application.DirectorOperations.GetDirectorDetail;
 using MovieStoreApi.Application.DirectorOperations.GetDirectors;
@@ -23,6 +24,7 @@ namespace MovieStoreApi.Common
             CreateMap<CreateMovieModel, Movie>().ForMember(c=> c.Actors, c=>c.MapFrom(c=> c.Actors));
             CreateMap<CreateDirectorModel, Director>();
             CreateMap<CreateActorModel, Actor>();
+            CreateMap<CreateCustomerModel, Customer>();
             CreateMap<Movie, MovieViewModel>().ForMember(c => c.Genre, c => c.MapFrom(c => c.Genre.Name)).ForMember(c => c.Director, c => c.MapFrom(c => c.Director.Name + "" + c.Director.Surname)).ForMember(c => c.Actors, c => c.MapFrom(c => c.Actors.Select(c => c.Name + " " + c.Surname).ToList()));
             CreateMap<Director, DirectorViewModel>().ForMember(c => c.Movies, c => c.MapFrom(c => c.Movies.Select(c => c.Name).ToList()));
             CreateMap<Actor, ActorViewModel>().ForMember(c => c.Movies, c => c.MapFrom(c => c.Movies.Select(c => c.Name).ToList()));

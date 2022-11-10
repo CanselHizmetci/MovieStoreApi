@@ -8,7 +8,7 @@ namespace MovieStoreApi.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public Customer Customer { get; set; }
-        public ICollection<Movie> PurchasedMovies { get; set; }
+        public Movie PurchasedMovie { get; set; }
         public decimal Price { get; set; }
         public DateTime PurchasedDate { get; set; }
     }

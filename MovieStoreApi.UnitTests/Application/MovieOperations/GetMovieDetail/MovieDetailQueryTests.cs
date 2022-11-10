@@ -1,37 +1,40 @@
 ﻿using System;
+using AutoMapper;
 using FluentAssertions;
-using MovieStoreApi.Application.MovieOperations.DeleteMovie;
+using MovieStoreApi.Application.MovieOperations.GetMovieDetail;
 using MovieStoreApi.DbOperations;
 using MovieStoreApi.UnitTests.TestSetup;
 
-namespace MovieStoreApi.UnitTests.Application.MovieOperations.DeleteMovie
+namespace MovieStoreApi.UnitTests.Application.MovieOperations.GetMovieDetail
 {
-    public class DeleteMovieCommandTests:IClassFixture<CommonTestFixture>
+    public class MovieDetailQueryTests:IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
-        public DeleteMovieCommandTests(CommonTestFixture testFixture)
+        private readonly IMapper _mapper;
+        public MovieDetailQueryTests(CommonTestFixture testFixture)
         {
             _context = testFixture.Context;
+            _mapper = testFixture.Mapper;
         }
         [Fact]
         public void WhenTheMovieIsNotAvailable_InvalidOperationException_ShouldBeReturn()
         {
             var director = new Entities.Director
             {
-                Name = "WhenTheMovieIsNotAvailable_InvalidOperationException_ShouldBeReturn",
-                Surname = "WhenTheMovieIsNotAvailable_InvalidOperationException_ShouldBeReturn"
+                Name = "MovieDetailQueryTests",
+                Surname = "MovieDetailQueryTests"
             };
             _context.Directors.Add(director);
             _context.SaveChanges();
             var genre = new Entities.Genre
             {
-                Name = "WhenTheMovieIsNotAvailable_InvalidOperationException_ShouldBeReturn"
+                Name = "MovieDetailQueryTests"
             };
             _context.Genres.Add(genre);
             _context.SaveChanges();
             var movie = new Entities.Movie
             {
-                Name = "WhenTheMovieIsNotAvailable_InvalidOperationException_ShouldBeReturn",
+                Name = "MovieDetailQueryTests",
                 Year = 2000,
                 DirectorId = director.Id,
                 GenreId = genre.Id,
@@ -45,31 +48,32 @@ namespace MovieStoreApi.UnitTests.Application.MovieOperations.DeleteMovie
             _context.Remove(movie);
             _context.SaveChanges();
 
-            DeleteMovieCommand command = new DeleteMovieCommand(_context);
-            command.MovieId = movieId;
+            MovieDetailQuery query = new MovieDetailQuery(_context, _mapper);
+            query.MovieId = movie.Id;
+
             FluentActions
-                .Invoking(() => command.Handle().GetAwaiter().GetResult())
-                .Should().Throw<InvalidOperationException>().And.Message.Should().Be("Silmek istediğiniz film mevcut değil");
+                .Invoking(() => query.Handle().GetAwaiter().GetResult())
+                .Should().Throw<InvalidOperationException>().And.Message.Should().Be("Film mevcut değil");
         }
         [Fact]
-        public void WhenValidInputsAreGiven_DeleteMovie_ShouldNotBeReturnError()
+        public void WhenTheMovieIsNotAvailable_Actor_ShouldNotBeReturnErrors()
         {
             var director = new Entities.Director
             {
-                Name = "ForHappyCodeMovie",
-                Surname = "ForHappyCodeMovie"
+                Name = "ForHappyCodeMovieDetailQueryTests",
+                Surname = "ForHappyCodeMovieDetailQueryTests"
             };
             _context.Directors.Add(director);
             _context.SaveChanges();
             var genre = new Entities.Genre
             {
-                Name = "ForHappyCodeMovie"
+                Name = "ForHappyCodeMovieDetailQueryTests"
             };
             _context.Genres.Add(genre);
             _context.SaveChanges();
             var movie = new Entities.Movie
             {
-                Name = "ForHappyCodeMovie",
+                Name = "ForHappyCodeMovieDetailQueryTests",
                 Year = 2000,
                 DirectorId = director.Id,
                 GenreId = genre.Id,
@@ -79,11 +83,11 @@ namespace MovieStoreApi.UnitTests.Application.MovieOperations.DeleteMovie
             _context.SaveChanges();
 
             var movieId = movie.Id;
-            DeleteMovieCommand command = new DeleteMovieCommand(_context);
-            command.MovieId = movieId;
+            MovieDetailQuery query = new MovieDetailQuery(_context, _mapper);
+            query.MovieId = movie.Id;
 
             FluentActions
-                .Invoking(() => command.Handle().GetAwaiter().GetResult()).Invoke();
+                .Invoking(() => query.Handle().GetAwaiter().GetResult()).Invoke();
         }
     }
 }

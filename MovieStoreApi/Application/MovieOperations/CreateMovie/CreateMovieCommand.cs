@@ -19,7 +19,7 @@ namespace MovieStoreApi.Application.MovieOperations.CreateMovie
         }
         public async Task Handle()
         {
-            var movie = _context.Movies.FirstOrDefault(c => c.Name == Model.Name && c.DirectorId == Model.DirectorId);
+            var movie = _context.Movies.Where(c => !c.IsDeleted).FirstOrDefault(c => c.Name == Model.Name && c.DirectorId == Model.DirectorId);
             if (movie is not null)
                 throw new InvalidOperationException("Eklemek istediğiniz film zaten mevcut");
             movie = _mapper.Map<Movie>(Model);

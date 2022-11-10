@@ -10,9 +10,7 @@ namespace MovieStoreApi.Entities
         public string Name { get; set; }
         public string Surname { get; set; }
         public ICollection<Movie> PurchasedMovies { get; set; }
-        public int MovieId { get; set; }
-        public Genre FavoriteGenres { get; set; }
-        public int GenreId { get; set; }
+        public ICollection<Genre> FavoriteGenres { get; set; }
     }
 }
 

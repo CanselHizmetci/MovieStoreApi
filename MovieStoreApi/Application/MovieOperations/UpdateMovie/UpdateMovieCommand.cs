@@ -18,7 +18,7 @@ namespace MovieStoreApi.Application.MovieOperations.UpdateMovie
 
         public async Task Handle()
         {
-            var movie = _context.Movies.Include(c=> c.Genre).Include(c=> c.Actors).FirstOrDefault(c => c.Id == MovieId);
+            var movie = _context.Movies.Where(c => !c.IsDeleted).Include(c=> c.Genre).Include(c=> c.Actors).FirstOrDefault(c => c.Id == MovieId);
             if (movie == null)
                 throw new InvalidOperationException("Güncellemek istediğiniz film mevcut değil");
 

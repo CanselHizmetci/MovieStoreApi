@@ -37,7 +37,7 @@ namespace MovieStoreApi.UnitTests.Application.DirectorOperations.UpdateDirector
                 .Should().Throw<InvalidOperationException>().And.Message.Should().Be("Yönetmen bulunamadı");
         }
         [Fact]
-        public void WhenValidInputsAreGiven_Actor_ShouldBeUpdated()
+        public void WhenValidInputsAreGiven_Director_ShouldBeUpdated()
         {
             var director = new Entities.Director
             {

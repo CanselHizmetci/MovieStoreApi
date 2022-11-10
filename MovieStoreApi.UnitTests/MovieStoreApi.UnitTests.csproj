@@ -41,6 +41,9 @@
     <None Remove="Application\MovieOperations\GetMovieDetail\" />
     <None Remove="Application\MovieOperations\GetMovies\" />
     <None Remove="Application\MovieOperations\UpdateMovie\" />
+    <None Remove="Application\CustomerOperations\" />
+    <None Remove="Application\CustomerOperations\CreateCustomer\" />
+    <None Remove="Application\CustomerOperations\DeleteCustomer\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\ActorOperations\DeleteActor\" />
@@ -57,5 +60,8 @@
     <Folder Include="Application\MovieOperations\GetMovieDetail\" />
     <Folder Include="Application\MovieOperations\GetMovies\" />
     <Folder Include="Application\MovieOperations\UpdateMovie\" />
+    <Folder Include="Application\CustomerOperations\" />
+    <Folder Include="Application\CustomerOperations\CreateCustomer\" />
+    <Folder Include="Application\CustomerOperations\DeleteCustomer\" />
   </ItemGroup>
 </Project>

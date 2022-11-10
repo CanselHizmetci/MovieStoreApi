@@ -38,13 +38,8 @@
     <None Remove="Services\" />
     <None Remove="Application\ActorOperations\" />
     <None Remove="Application\DirectorOperations\" />
-    <None Remove="Application\GenreOperations\" />
     <None Remove="Application\CustomerOperations\" />
     <None Remove="Application\OrderOperations\" />
-    <None Remove="Application\GenreOperations\CreateGenre\" />
-    <None Remove="Application\GenreOperations\DeleteGenre\" />
-    <None Remove="Application\GenreOperations\GetGenreDetail\" />
-    <None Remove="Application\GenreOperations\GetGenres\" />
     <None Remove="Application\CustomerOperations\CreateCustomer\" />
     <None Remove="Application\CustomerOperations\DeleteCustomer\" />
     <None Remove="Application\DirectorOperations\CreateDirector\" />
@@ -74,13 +69,8 @@
     <Folder Include="Services\" />
     <Folder Include="Application\ActorOperations\" />
     <Folder Include="Application\DirectorOperations\" />
-    <Folder Include="Application\GenreOperations\" />
     <Folder Include="Application\CustomerOperations\" />
     <Folder Include="Application\OrderOperations\" />
-    <Folder Include="Application\GenreOperations\CreateGenre\" />
-    <Folder Include="Application\GenreOperations\DeleteGenre\" />
-    <Folder Include="Application\GenreOperations\GetGenreDetail\" />
-    <Folder Include="Application\GenreOperations\GetGenres\" />
     <Folder Include="Application\CustomerOperations\CreateCustomer\" />
     <Folder Include="Application\CustomerOperations\DeleteCustomer\" />
     <Folder Include="Application\DirectorOperations\CreateDirector\" />
