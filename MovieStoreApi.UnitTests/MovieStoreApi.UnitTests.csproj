@@ -44,6 +44,9 @@
     <None Remove="Application\CustomerOperations\" />
     <None Remove="Application\CustomerOperations\CreateCustomer\" />
     <None Remove="Application\CustomerOperations\DeleteCustomer\" />
+    <None Remove="Application\OrderOperations\" />
+    <None Remove="Application\OrderOperations\CreateOrder\" />
+    <None Remove="Application\OrderOperations\GetOrders\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\ActorOperations\DeleteActor\" />
@@ -63,5 +66,8 @@
     <Folder Include="Application\CustomerOperations\" />
     <Folder Include="Application\CustomerOperations\CreateCustomer\" />
     <Folder Include="Application\CustomerOperations\DeleteCustomer\" />
+    <Folder Include="Application\OrderOperations\" />
+    <Folder Include="Application\OrderOperations\CreateOrder\" />
+    <Folder Include="Application\OrderOperations\GetOrders\" />
   </ItemGroup>
 </Project>

@@ -52,6 +52,8 @@
     <None Remove="Application\ActorOperations\GetActorDetail\" />
     <None Remove="Application\ActorOperations\GetActors\" />
     <None Remove="Application\ActorOperations\UpdateActor\" />
+    <None Remove="Application\OrderOperations\CreateOrder\" />
+    <None Remove="Application\OrderOperations\GetOrders\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -83,5 +85,7 @@
     <Folder Include="Application\ActorOperations\GetActorDetail\" />
     <Folder Include="Application\ActorOperations\GetActors\" />
     <Folder Include="Application\ActorOperations\UpdateActor\" />
+    <Folder Include="Application\OrderOperations\CreateOrder\" />
+    <Folder Include="Application\OrderOperations\GetOrders\" />
   </ItemGroup>
 </Project>

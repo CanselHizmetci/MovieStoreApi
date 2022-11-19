@@ -1,5 +1,6 @@
 ﻿using System;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using MovieStoreApi.DbOperations;
 using MovieStoreApi.Entities;
 
@@ -32,8 +33,6 @@ namespace MovieStoreApi.Application.CustomerOperations.CreateCustomer
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public ICollection<Movie> PurchasedMovies { get; set; }
-        public Genre FavoriteGenres { get; set; }
     }
 }
 
