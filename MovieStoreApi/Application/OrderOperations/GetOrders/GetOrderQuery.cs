@@ -17,7 +17,7 @@ namespace MovieStoreApi.Application.OrderOperations.GetOrders
 		}
 		public async Task<List<OrderViewModel>> Handle()
 		{
-			var orderList = await _context.Orders.OrderBy(c => c.Id).ToListAsync();
+			var orderList = await _context.Orders.Include(c=> c.PurchasedMovie).Include(c=> c.Customer).OrderBy(c => c.Id).ToListAsync();
 			if (orderList == null)
 				throw new InvalidOperationException("Sipariş listesi mevcut değil.");
 

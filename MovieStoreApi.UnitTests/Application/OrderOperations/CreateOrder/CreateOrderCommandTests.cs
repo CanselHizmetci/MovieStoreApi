@@ -19,44 +19,25 @@ namespace MovieStoreApi.UnitTests.Application.OrderOperations.CreateOrder
 		[Fact]
 		public void WhenAlreadyExistOrder_InvalidOperationException_ShouldBeReturn()
 		{
-			var customer = new Entities.Customer
-			{
-				Name = "WhenAlreadyExistOrder_InvalidOperationException_ShouldBeReturn",
-				Surname = "WhenAlreadyExistOrder_InvalidOperationException_ShouldBeReturn"
-			};
-            var director = new Entities.Director
+        
+            var customer = new Entities.Customer
             {
-                Name = "WhenAlreadyExistOrder_InvalidOperationException_ShouldBeReturn",
-                Surname = "WhenAlreadyExistOrder_InvalidOperationException_ShouldBeReturn"
+                Name = "WhenAlreadyExistCustomer_InvalidOperationException_ShouldBeReturn",
+                Surname = "WhenAlreadyExistCustomer_InvalidOperationException_ShouldBeReturn"
             };
-            _context.Directors.Add(director);
+            _context.Customers.Add(customer);
             _context.SaveChanges();
-            var genre = new Entities.Genre
-            {
-                Name = "WhenAlreadyExistOrder_InvalidOperationException_ShouldBeReturn"
-            };
-            _context.Genres.Add(genre);
-            _context.SaveChanges();
-            var movie = new Entities.Movie
-            {
-                Name = "WhenAlreadyExistOrder_InvalidOperationException_ShouldBeReturn",
-                Year = 2000,
-                DirectorId = director.Id,
-                GenreId = genre.Id,
-                Price = 200
-            };
             var order = new Entities.Order
             {
                 CustomerId = customer.Id,
-                MovieId = movie.Id
+                MovieId = 1
             };
-
+			_context.Orders.Add(order);
+			_context.SaveChanges();
             CreateOrderCommand command = new CreateOrderCommand(_context, _mapper);
-            //command.Model = new CreateOrderModel { PurchasedMovie = order.PurchasedMovie, Customer = order.Customer };
+            command.Model = new CreateOrderModel { MovieId = 1, CustomerId = customer.Id };
             FluentActions
-                .Invoking(() => command.Handle().GetAwaiter().GetResult())
-                .Should().Throw<InvalidOperationException>().And.Message.Should().Be("Bu sipariş mevcut");
-		}
+                .Invoking(() => command.Handle().GetAwaiter().GetResult()).Invoke();		}
 
     }
 }

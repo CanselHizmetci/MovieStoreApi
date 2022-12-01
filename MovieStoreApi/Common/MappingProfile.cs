@@ -26,7 +26,7 @@ namespace MovieStoreApi.Common
             CreateMap<CreateMovieModel, Movie>().ForMember(c=> c.Actors, c=>c.MapFrom(c=> c.Actors));
             CreateMap<CreateDirectorModel, Director>();
             CreateMap<CreateOrderModel, Order>();
-            CreateMap<Order, OrderViewModel>().ForMember(c=> c.CustomerName, c=> c.MapFrom(c=> c.Customer.Name)).ForMember(c => c.PurchasedMovie, c => c.MapFrom(c => c.PurchasedMovie.Name));
+            CreateMap<Order, OrderViewModel>().ForMember(c=> c.CustomerName, c=> c.MapFrom(c=> c.Customer.Name + " " + c.Customer.Surname)).ForMember(c => c.PurchasedMovie, c => c.MapFrom(c => c.PurchasedMovie.Name));
             CreateMap<CreateActorModel, Actor>();
             CreateMap<CreateCustomerModel, Customer>();
             CreateMap<Movie, MovieViewModel>().ForMember(c => c.Genre, c => c.MapFrom(c => c.Genre.Name)).ForMember(c => c.Director, c => c.MapFrom(c => c.Director.Name + "" + c.Director.Surname)).ForMember(c => c.Actors, c => c.MapFrom(c => c.Actors.Select(c => c.Name + " " + c.Surname).ToList()));

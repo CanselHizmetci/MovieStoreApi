@@ -14,6 +14,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="FluentValidation" Version="11.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.11" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,6 +55,9 @@
     <None Remove="Application\ActorOperations\UpdateActor\" />
     <None Remove="Application\OrderOperations\CreateOrder\" />
     <None Remove="Application\OrderOperations\GetOrders\" />
+    <None Remove="TokenOperations\" />
+    <None Remove="TokenOperations\Models\" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -87,5 +91,7 @@
     <Folder Include="Application\ActorOperations\UpdateActor\" />
     <Folder Include="Application\OrderOperations\CreateOrder\" />
     <Folder Include="Application\OrderOperations\GetOrders\" />
+    <Folder Include="TokenOperations\" />
+    <Folder Include="TokenOperations\Models\" />
   </ItemGroup>
 </Project>

@@ -20,8 +20,6 @@ namespace MovieStoreApi.Application.OrderOperations.CreateOrder
         public async Task Handle()
         {
             var order = _mapper.Map<Order>(Model);
-            if (order == null)
-                throw new InvalidOperationException("Eksik bilgi gönderdiniz");
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
         }
